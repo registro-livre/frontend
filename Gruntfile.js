@@ -441,4 +441,10 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('autotest', [
+      'jshint',
+      'test',
+      'watch'
+  ]);
 };
