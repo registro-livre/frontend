@@ -46,6 +46,7 @@
     "postinstall": "bower install",
     "build": "grunt build",
     "test": "grunt test",
-    "autotest": "grunt autotest"
+    "autotest": "grunt autotest",
+    "serve": "grunt serve"
   }
 }
