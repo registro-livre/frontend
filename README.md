@@ -7,6 +7,7 @@
 Como começar?
 
 Bom, primeiramente você precisa ter 3 dependências já instaladas. Elas são:
+- [Git 1.8.0+](http://git-scm.com/downloads)
 - [Ruby 2.0.0+](https://www.ruby-lang.org/en/downloads/)
 - [Compass 1.0.1+](https://rubygems.org/gems/compass) (compass é uma ruby gem)
 - [NodeJS](http://nodejs.org/download/) (npm)
