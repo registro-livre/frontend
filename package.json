@@ -37,7 +37,8 @@
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "time-grunt": "^0.3.1",
+    "express": "^3.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -47,6 +48,7 @@
     "build": "grunt build",
     "test": "grunt test",
     "autotest": "grunt autotest",
-    "serve": "grunt serve"
+    "serve": "grunt serve",
+    "start": "node server.js"
   }
 }
