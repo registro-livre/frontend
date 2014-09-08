@@ -447,4 +447,6 @@ module.exports = function (grunt) {
       'test',
       'watch'
   ]);
+
+  grunt.registerTask('heroku', ['build']);
 };
