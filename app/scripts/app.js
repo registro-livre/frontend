@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name registroLivreApp
- * @description
- * # registroLivreApp
- *
- * Main module of the application.
- */
 angular
   .module('registroLivreApp', [
     'ngResource',
@@ -18,6 +10,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/novo', {
+        templateUrl: 'views/novo-registro.html',
+        controller: 'NovoRegistroCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
