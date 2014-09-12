@@ -21,5 +21,30 @@
     <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
   </div>
 
+  <h3>
+    Localização
+  </h3>
+
+  <div class="form-group">
+    <label>Tipo</label>
+    <select class="form-control" ng-model="model.registro.localizacao.tipo">
+      <option>Alameda</option>
+      <option>Avenida</option>
+      <option>Estrada</option>
+      <option>Praça</option>
+      <option>Rodovia</option>
+      <option>Rua</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Logradouro *</label>
+    <input type="text" class="form-control" ng-model="model.registro.localizacao.logradouro" required />
+  </div>
+  <div class="form-group">
+    <label>Número</label>
+    <input type="tel" class="form-control" ng-model="model.registro.localizacao.numero" />
+  </div>
+
   <button ng-click="registrar()">Registrar</button>
 </form>

@@ -12,7 +12,7 @@
 
     return {
       registro: registro,
-    registrar: registrar
+      registrar: registrar
     };
   });
 })();
