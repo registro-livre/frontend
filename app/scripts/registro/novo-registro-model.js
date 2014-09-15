@@ -15,4 +15,5 @@
       registrar: registrar
     };
   });
+
 })();
