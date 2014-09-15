@@ -1,128 +1,141 @@
 <h1>Novo</h1>
 <form role="form">
-  <h3>
-    Empresa
-  </h3>
 
-  <div class="form-group">
-    <label>CNPJ *</label>
-    <input type="tel" class="form-control" ng-model="model.registro.cnpj" required />
-  </div>
-  <div class="form-group">
-    <label>Nome da empresa *</label>
-    <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
-  </div>
-  <div class="form-group">
-    <label>NIRE</label>
-    <input type="tel" class="form-control" ng-model="model.registro.nire" />
-  </div>
-  <div class="form-group">
-    <label>Data de Constituição *</label>
-    <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
-  </div>
+  <h3>Empresa</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>CNPJ *</label>
+        <input type="tel" class="form-control" ng-model="model.registro.cnpj" required />
+      </div>
+      <div class="form-group col-md-6">
+        <label>NIRE</label>
+        <input type="tel" class="form-control" ng-model="model.registro.nire" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-8">
+        <label>Nome da empresa *</label>
+        <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Data de Constituição *</label>
+        <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
+      </div>
+    </div>
 
-  <h3>
-    Localização
-  </h3>
+    <h3>Localização</h3>
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label>Tipo</label>
+        <select class="form-control" ng-model="model.registro.localizacao.tipo">
+          <option value="Alameda">Alameda</option>
+          <option value="Avenida">Avenida</option>
+          <option value="Estrada">Estrada</option>
+          <option value="Praça">Praça</option>
+          <option value="Rua">Rua</option>
+          <option value="Rodovia">Rodovia</option>
+        </select>
+      </div>
 
-  <div class="form-group">
-    <label>Tipo</label>
-    <select class="form-control" ng-model="model.registro.localizacao.tipo">
-      <option value="Alameda">Alameda</option>
-      <option value="Avenida">Avenida</option>
-      <option value="Estrada">Estrada</option>
-      <option value="Praça">Praça</option>
-      <option value="Rua">Rua</option>
-      <option value="Rodovia">Rodovia</option>
-    </select>
-  </div>
+      <div class="form-group col-md-6">
+        <label>Logradouro *</label>
+        <input type="text" class="form-control" ng-model="model.registro.localizacao.logradouro" required />
+      </div>
+      <div class="form-group col-md-2">
+        <label>Número</label>
+        <input type="tel" class="form-control" ng-model="model.registro.localizacao.numero" />
+      </div>
+      <div class="form-group col-md-2">
+        <label>Complemento</label>
+        <input type="text" class="form-control" ng-model="model.registro.localizacao.complemento" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label>UF</label>
+        <select class="form-control" ng-model="model.registro.localizacao.uf">
+          <option value="Acre">Acre</option>
+          <option value="Alagoas">Alagoas</option>
+          <option value="Amapá">Amapá</option>
+          <option value="Amazonas">Amazonas</option>
+          <option value="Bahia">Bahia</option>
+          <option value="Ceará">Ceará</option>
+          <option value="Distrito Federal">Distrito Federal</option>
+          <option value="Espírito Santo">Espírito Santo</option>
+          <option value="Goiás">Goiás</option>
+          <option value="Maranhão">Maranhão</option>
+          <option value="Mato Grosso">Mato Grosso</option>
+          <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+          <option value="Minas Gerais">Minas Gerais</option>
+          <option value="Pará">Pará</option>
+          <option value="Paraíba">Paraíba</option>
+          <option value="Paraná">Paraná</option>
+          <option value="Pernambuco">Pernambuco</option>
+          <option value="Piauí">Piauí</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+          <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+          <option value="Rondônia">Rondônia</option>
+          <option value="Santa Catarina">Santa Catarina</option>
+          <option value="Roraima">Roraima</option>
+          <option value="São Paulo">São Paulo</option>
+          <option value="Sergipe">Sergipe</option>
+          <option value="Tocantins">Tocantins</option>
+        </select>
+      </div>
+      <div class="form-group col-md-8">
+        <label>Município</label>
+        <select class="form-control" ng-model="model.registro.localizacao.municipio">
+          <option value="Cidades por vir...">Cidades por vir...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label>CEP</label>
+        <input type="tel" class="form-control" ng-model="model.registro.localizacao.cep" />
+      </div>
+    </div>
 
-  <div class="form-group">
-    <label>Logradouro *</label>
-    <input type="text" class="form-control" ng-model="model.registro.localizacao.logradouro" required />
-  </div>
-  <div class="form-group">
-    <label>Número</label>
-    <input type="tel" class="form-control" ng-model="model.registro.localizacao.numero" />
-  </div>
-  <div class="form-group">
-    <label>Complemento</label>
-    <input type="text" class="form-control" ng-model="model.registro.localizacao.complemento" />
-  </div>
-  <div class="form-group">
-    <label>UF</label>
-    <select class="form-control" ng-model="model.registro.localizacao.uf">
-      <option value="Acre">Acre</option>
-      <option value="Alagoas">Alagoas</option>
-      <option value="Amapá">Amapá</option>
-      <option value="Amazonas">Amazonas</option>
-      <option value="Bahia">Bahia</option>
-      <option value="Ceará">Ceará</option>
-      <option value="Distrito Federal">Distrito Federal</option>
-      <option value="Espírito Santo">Espírito Santo</option>
-      <option value="Goiás">Goiás</option>
-      <option value="Maranhão">Maranhão</option>
-      <option value="Mato Grosso">Mato Grosso</option>
-      <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-      <option value="Minas Gerais">Minas Gerais</option>
-      <option value="Pará">Pará</option>
-      <option value="Paraíba">Paraíba</option>
-      <option value="Paraná">Paraná</option>
-      <option value="Pernambuco">Pernambuco</option>
-      <option value="Piauí">Piauí</option>
-      <option value="Rio de Janeiro">Rio de Janeiro</option>
-      <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-      <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-      <option value="Rondônia">Rondônia</option>
-      <option value="Santa Catarina">Santa Catarina</option>
-      <option value="Roraima">Roraima</option>
-      <option value="São Paulo">São Paulo</option>
-      <option value="Sergipe">Sergipe</option>
-      <option value="Tocantins">Tocantins</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>Município</label>
-    <select class="form-control" ng-model="model.registro.localizacao.municipio">
-      <option value="Cidades por vir...">Cidades por vir...</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>CEP</label>
-    <input type="tel" class="form-control" ng-model="model.registro.localizacao.cep" />
-  </div>
+    <h3>Sócios / Titulares / Diretores</h3>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label>Nome *</label>
+        <input type="text" class="form-control" ng-model="model.registro.novoSocio.nome" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label>Nacionalidade</label>
+        <select class="form-control" ng-model="model.registro.novoSocio.nacionalidade">
+          <option value="Brasileiro">Brasileiro</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label>CPF *</label>
+        <input type="text" class="form-control" ng-model="model.registro.novoSocio.cpf" required />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Estado Atual</label>
+        <div class="row">
+          <div class="col-md-6">
+            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="ativo" required />
+            Ativo
+          </div>
+          <div class="col-md-6">
+            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="desligado" required />
+            Desligado
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
 
-  <h3>Sócios / Titulares / Diretores</h3>
-  <div class="form-group">
-    <label>Nome *</label>
-    <input type="text" class="form-control" ng-model="model.registro.novoSocio.nome" required />
-  </div>
-  <div class="form-group">
-    <label>Nacionalidade</label>
-    <select class="form-control" ng-model="model.registro.novoSocio.nacionalidade">
-      <option value="Brasileiro">Brasileiro</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>CPF *</label>
-    <input type="text" class="form-control" ng-model="model.registro.novoSocio.cpf" required />
-  </div>
-  <div class="form-group">
-    <label>Estado Atual</label>
-    <br>
-    <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="ativo" required />
-    Ativo
-    <br>
-    <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="desligado" required />
-    Desligado
-  </div>
-  <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
-
-  <h3>Adicionar Arquivo</h3>
-  <div class="form-group">
-    <input type="file" ng-model="registro.arquivo" />
-    <br>
-    <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+    <h3>Adicionar Arquivo</h3>
+    <div class="form-group">
+      <input type="file" ng-model="registro.arquivo" />
+      <br>
+      <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+    </div>
   </div>
 
   <br>
