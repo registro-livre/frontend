@@ -1,75 +1,101 @@
-<h1>Novo</h1>
 <form role="form">
-
-  <h3>Empresa</h3>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label>CNPJ *</label>
-        <input type="tel" class="form-control" ng-model="model.registro.cnpj" required />
-      </div>
-      <div class="form-group col-md-6">
-        <label>NIRE</label>
-        <input type="tel" class="form-control" ng-model="model.registro.nire" />
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Empresa</h3>
     </div>
-    <div class="row">
-      <div class="form-group col-md-8">
-        <label>Nome da empresa *</label>
-        <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
-      </div>
-      <div class="form-group col-md-4">
-        <label>Data de Constituição *</label>
-        <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
-      </div>
-    </div>
-
-    <h3>Localização</h3>
-    <endereco info="model.registro.localizacao"></endereco>
-
-    <h3>Sócios / Titulares / Diretores</h3>
-    <div class="row">
-      <div class="form-group col-md-12">
-        <label>Nome *</label>
-        <input type="text" class="form-control" ng-model="model.registro.novoSocio.nome" required />
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-4">
-        <label>Nacionalidade</label>
-        <select class="form-control" ng-model="model.registro.novoSocio.nacionalidade">
-          <option value="Brasileiro">Brasileiro</option>
-        </select>
-      </div>
-      <div class="form-group col-md-4">
-        <label>CPF *</label>
-        <input type="text" class="form-control" ng-model="model.registro.novoSocio.cpf" required />
-      </div>
-      <div class="form-group col-md-4">
-        <label>Estado Atual</label>
+    <div class="panel-body">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="ativo" required />
-            Ativo
+          <div class="form-group col-md-6">
+            <label>CNPJ *</label>
+            <input type="tel" class="form-control" ng-model="model.registro.cnpj" required />
           </div>
-          <div class="col-md-6">
-            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="desligado" required />
-            Desligado
+          <div class="form-group col-md-6">
+            <label>NIRE</label>
+            <input type="tel" class="form-control" ng-model="model.registro.nire" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label>Nome da empresa *</label>
+            <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
+          </div>
+          <div class="form-group col-md-4">
+            <label>Data de Constituição *</label>
+            <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
           </div>
         </div>
       </div>
     </div>
-    <endereco info="model.registro.novoSocio.endereco"></endereco>
-    <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
+  </div>
 
-    <h3>Adicionar Arquivo</h3>
-    <div class="form-group">
-      <input type="file" ng-model="registro.arquivo" />
-      <br>
-      <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Localização</h3>
+    </div>
+    <div class="panel-body">
+      <endereco info="model.registro.localizacao"></endereco>
     </div>
   </div>
 
-  <br>
-  <button type="button" class="btn btn-primary" ng-click="registrar()">Registrar</button>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Sócios / Titulares / Diretores</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label>Nome *</label>
+          <input type="text" class="form-control" ng-model="model.registro.novoSocio.nome" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label>Nacionalidade</label>
+          <select class="form-control" ng-model="model.registro.novoSocio.nacionalidade">
+            <option value="Brasileiro">Brasileiro</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label>CPF *</label>
+          <input type="text" class="form-control" ng-model="model.registro.novoSocio.cpf" required />
+        </div>
+        <div class="form-group col-md-4">
+          <label>Estado Atual</label>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="ativo" required />
+              Ativo
+            </div>
+            <div class="col-md-6">
+              <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="desligado" required />
+              Desligado
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Endereço</h3>
+      <endereco info="model.registro.novoSocio.endereco"></endereco>
+      <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Adicionar Arquivo</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <input type="file" ng-model="registro.arquivo" />
+        <br>
+        <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+      </div>
+    </div>
+  </div>
 </form>
+
+<div class="row center-block">
+  <div class="col-md-12">
+    <button type="button" class="btn btn-success btn-lg" ng-click="registrar()">Registrar</button>
+  </div>
+</div>
