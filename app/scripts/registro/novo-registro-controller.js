@@ -19,7 +19,7 @@
     };
   }
 
-  angular.module('registroLivreApp')
+  angular.module('registroLivreApp.registro')
     .controller('NovoRegistroCtrl', ['$scope', '$timeout', 'novoRegistroModel', NovoRegistroCtrl]);
 
 })();

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('registroLivreApp')
+  angular.module('registroLivreApp.registro')
     .factory('novoRegistroModel', function () {
 
     var registro = {};

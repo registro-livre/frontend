@@ -1,7 +1,10 @@
 'use strict';
 
+angular.module('registroLivreApp.registro', []);
+
 angular
   .module('registroLivreApp', [
+    'registroLivreApp.registro',
     'ngResource',
     'ngRoute'
   ])
