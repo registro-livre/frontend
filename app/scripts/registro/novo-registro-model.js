@@ -7,8 +7,15 @@
     var registro = {};
     var novoSocio = {};
 
+    var listaDeRegistros = [];
+
     function registrar() {
-      console.log(registro);
+      /*jshint validthis:true */
+      listaDeRegistros.push(angular.copy(this.registro));
+      /*jshint validthis:true */
+      this.registro = {};
+
+      console.log(listaDeRegistros);
     }
 
     function adicionarSocio() {
