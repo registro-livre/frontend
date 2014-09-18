@@ -43,11 +43,6 @@
       <div class="panel-heading">
         <h3>Sócios / Titulares / Diretores</h3>
       </div>
-      <div ng-repeat-"socio in model.registro.socios">
-        <ul>
-          <li ng-repeat="socio in model.registro.socios">{{socio}}</li>
-        </ul>
-      </div>
       <div class="panel-body">
         <div class="row">
           <div class="form-group col-md-12">
@@ -70,11 +65,11 @@
             <label>Estado Atual</label>
             <div class="row">
               <div class="col-md-6">
-                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="ativo" />
+                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Ativo" required />
                 Ativo
               </div>
               <div class="col-md-6">
-                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="desligado" />
+                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Desligado" />
                 Desligado
               </div>
             </div>
@@ -82,7 +77,34 @@
         </div>
         <h3>Endereço</h3>
         <endereco info="model.novoSocio.endereco"></endereco>
-        <button type="submit" class="btn btn-primary">Adicionar Sócio</button>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Adicionar Sócio</button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">Lista de sócios</div>
+
+              <table class="table table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Nome</td>
+                    <th>Estado Atual</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="socio in model.registro.socios">
+                    <td>{{socio.nome}}</td>
+                    <td>{{socio.estadoAtual}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>
