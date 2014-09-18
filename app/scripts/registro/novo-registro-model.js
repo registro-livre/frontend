@@ -19,12 +19,14 @@
     }
 
     function adicionarSocio() {
-      if (registro.socios === undefined) {
-        registro.socios = [];
+      /*jshint validthis:true */
+      if (this.registro.socios === undefined) {
+        /*jshint validthis:true */
+        this.registro.socios = [];
       }
 
       /*jshint validthis:true */
-      registro.socios.push(angular.copy(this.novoSocio));
+      this.registro.socios.push(angular.copy(this.novoSocio));
 
       /*jshint validthis:true */
       this.novoSocio = {};
