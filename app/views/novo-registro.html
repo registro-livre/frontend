@@ -1,143 +1,135 @@
-<h1>Novo</h1>
-<form role="form">
-
-  <h3>Empresa</h3>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label>CNPJ *</label>
-        <input type="tel" class="form-control" ng-model="model.registro.cnpj" required />
+<div class="container-fluid">
+  <div class="alert alert-success" role="alert" ng-show="showSuccessMessage">
+    Obrigado por colaborar com o Registro Livre! Pronto para mais? ;-)
+  </div>
+  <form role="form">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Empresa</h3>
       </div>
-      <div class="form-group col-md-6">
-        <label>NIRE</label>
-        <input type="tel" class="form-control" ng-model="model.registro.nire" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-8">
-        <label>Nome da empresa *</label>
-        <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
-      </div>
-      <div class="form-group col-md-4">
-        <label>Data de Constituição *</label>
-        <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
-      </div>
-    </div>
-
-    <h3>Localização</h3>
-    <div class="row">
-      <div class="form-group col-md-2">
-        <label>Tipo</label>
-        <select class="form-control" ng-model="model.registro.localizacao.tipo">
-          <option value="Alameda">Alameda</option>
-          <option value="Avenida">Avenida</option>
-          <option value="Estrada">Estrada</option>
-          <option value="Praça">Praça</option>
-          <option value="Rua">Rua</option>
-          <option value="Rodovia">Rodovia</option>
-        </select>
-      </div>
-
-      <div class="form-group col-md-6">
-        <label>Logradouro *</label>
-        <input type="text" class="form-control" ng-model="model.registro.localizacao.logradouro" required />
-      </div>
-      <div class="form-group col-md-2">
-        <label>Número</label>
-        <input type="tel" class="form-control" ng-model="model.registro.localizacao.numero" />
-      </div>
-      <div class="form-group col-md-2">
-        <label>Complemento</label>
-        <input type="text" class="form-control" ng-model="model.registro.localizacao.complemento" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-2">
-        <label>UF</label>
-        <select class="form-control" ng-model="model.registro.localizacao.uf">
-          <option value="Acre">Acre</option>
-          <option value="Alagoas">Alagoas</option>
-          <option value="Amapá">Amapá</option>
-          <option value="Amazonas">Amazonas</option>
-          <option value="Bahia">Bahia</option>
-          <option value="Ceará">Ceará</option>
-          <option value="Distrito Federal">Distrito Federal</option>
-          <option value="Espírito Santo">Espírito Santo</option>
-          <option value="Goiás">Goiás</option>
-          <option value="Maranhão">Maranhão</option>
-          <option value="Mato Grosso">Mato Grosso</option>
-          <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-          <option value="Minas Gerais">Minas Gerais</option>
-          <option value="Pará">Pará</option>
-          <option value="Paraíba">Paraíba</option>
-          <option value="Paraná">Paraná</option>
-          <option value="Pernambuco">Pernambuco</option>
-          <option value="Piauí">Piauí</option>
-          <option value="Rio de Janeiro">Rio de Janeiro</option>
-          <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-          <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-          <option value="Rondônia">Rondônia</option>
-          <option value="Santa Catarina">Santa Catarina</option>
-          <option value="Roraima">Roraima</option>
-          <option value="São Paulo">São Paulo</option>
-          <option value="Sergipe">Sergipe</option>
-          <option value="Tocantins">Tocantins</option>
-        </select>
-      </div>
-      <div class="form-group col-md-8">
-        <label>Município</label>
-        <select class="form-control" ng-model="model.registro.localizacao.municipio">
-          <option value="Cidades por vir...">Cidades por vir...</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label>CEP</label>
-        <input type="tel" class="form-control" ng-model="model.registro.localizacao.cep" />
-      </div>
-    </div>
-
-    <h3>Sócios / Titulares / Diretores</h3>
-    <div class="row">
-      <div class="form-group col-md-12">
-        <label>Nome *</label>
-        <input type="text" class="form-control" ng-model="model.registro.novoSocio.nome" required />
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-4">
-        <label>Nacionalidade</label>
-        <select class="form-control" ng-model="model.registro.novoSocio.nacionalidade">
-          <option value="Brasileiro">Brasileiro</option>
-        </select>
-      </div>
-      <div class="form-group col-md-4">
-        <label>CPF *</label>
-        <input type="text" class="form-control" ng-model="model.registro.novoSocio.cpf" required />
-      </div>
-      <div class="form-group col-md-4">
-        <label>Estado Atual</label>
+      <div class="panel-body">
         <div class="row">
-          <div class="col-md-6">
-            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="ativo" required />
-            Ativo
+          <div class="form-group col-md-6">
+            <label>CNPJ *</label>
+            <input id="cnpj" type="tel" class="form-control" ng-model="model.registro.cnpj" required autofocus />
           </div>
-          <div class="col-md-6">
-            <input type="radio" ng-model="model.registro.novoSocio.estadoAtual" value="desligado" required />
-            Desligado
+          <div class="form-group col-md-6">
+            <label>NIRE</label>
+            <input type="tel" class="form-control" ng-model="model.registro.nire" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label>Nome da empresa *</label>
+            <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
+          </div>
+          <div class="form-group col-md-4">
+            <label>Data de Constituição *</label>
+            <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
           </div>
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
 
-    <h3>Adicionar Arquivo</h3>
-    <div class="form-group">
-      <input type="file" ng-model="registro.arquivo" />
-      <br>
-      <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Localização</h3>
+      </div>
+      <div class="panel-body">
+        <endereco info="model.registro.localizacao"></endereco>
+      </div>
     </div>
-  </div>
+  </form>
 
-  <br>
-  <button type="button" class="btn btn-primary" ng-click="registrar()">Registrar</button>
-</form>
+  <form role="form" ng-submit="adicionarSocio()">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Sócios / Titulares / Diretores</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label>Nome *</label>
+            <input type="text" class="form-control" ng-model="model.novoSocio.nome" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label>Nacionalidade</label>
+            <select class="form-control" ng-model="model.novoSocio.nacionalidade">
+              <option value="Brasileiro">Brasileiro</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label>CPF *</label>
+            <input type="text" class="form-control" ng-model="model.novoSocio.cpf" required />
+          </div>
+          <div class="form-group col-md-4">
+            <label>Estado Atual</label>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Ativo" required />
+                Ativo
+              </div>
+              <div class="col-md-6">
+                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Desligado" />
+                Desligado
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Endereço</h3>
+        <endereco info="model.novoSocio.endereco"></endereco>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Adicionar Sócio</button>
+          </div>
+        </div>
+        <br>
+        <div class="row" ng-hide="model.registro.socios === undefined || model.registro.socios.length === 0">
+          <div class="col-md-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">Lista de sócios</div>
+
+              <table class="table table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Nome</td>
+                    <th>Estado Atual</td>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="socio in model.registro.socios">
+                  <td>{{socio.nome}}</td>
+                  <td>{{socio.estadoAtual}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <form role="form" ng-submit="registrar()">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Adicionar Arquivo</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <input type="file" ng-model="registro.arquivo" />
+          <br>
+          <button type="button" class="btn btn-primary" ng-click="adicionarArquivo()">Adicionar Arquivo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row center-block">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-success btn-lg">Registrar</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -2,16 +2,24 @@
 
   'use strict';
 
-  function NovoRegistroCtrl ($scope, novoRegistroModel) {
+  function NovoRegistroCtrl ($scope, $timeout, novoRegistroModel) {
 
     $scope.model = novoRegistroModel;
+    $scope.showSuccessMessage = false;
 
     $scope.registrar = function() {
       novoRegistroModel.registrar();
+      angular.element('#cnpj').focus();
+      $scope.showSuccessMessage = true;
+      $timeout(function() { $scope.showSuccessMessage = false; }, 3000);
+    };
+
+    $scope.adicionarSocio = function() {
+      novoRegistroModel.adicionarSocio();
     };
   }
 
   angular.module('registroLivreApp')
-    .controller('NovoRegistroCtrl', ['$scope','novoRegistroModel', NovoRegistroCtrl]);
+    .controller('NovoRegistroCtrl', ['$scope', '$timeout', 'novoRegistroModel', NovoRegistroCtrl]);
 
 })();
