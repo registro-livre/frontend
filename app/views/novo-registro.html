@@ -36,10 +36,17 @@
         <endereco info="model.registro.localizacao"></endereco>
       </div>
     </div>
+  </form>
 
+  <form role="form" ng-submit="adicionarSocio()">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Sócios / Titulares / Diretores</h3>
+      </div>
+      <div ng-repeat-"socio in model.registro.socios">
+        <ul>
+          <li ng-repeat="socio in model.registro.socios">{{socio}}</li>
+        </ul>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -63,11 +70,11 @@
             <label>Estado Atual</label>
             <div class="row">
               <div class="col-md-6">
-                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="ativo" required />
+                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="ativo" />
                 Ativo
               </div>
               <div class="col-md-6">
-                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="desligado" required />
+                <input type="radio" ng-model="model.novoSocio.estadoAtual" value="desligado" />
                 Desligado
               </div>
             </div>
@@ -75,10 +82,12 @@
         </div>
         <h3>Endereço</h3>
         <endereco info="model.novoSocio.endereco"></endereco>
-        <button type="button" class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
+        <button type="submit" class="btn btn-primary">Adicionar Sócio</button>
       </div>
     </div>
+  </form>
 
+  <form role="form">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Adicionar Arquivo</h3>

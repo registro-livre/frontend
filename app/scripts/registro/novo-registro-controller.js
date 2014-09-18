@@ -9,6 +9,10 @@
     $scope.registrar = function() {
       novoRegistroModel.registrar();
     };
+
+    $scope.adicionarSocio = function() {
+      novoRegistroModel.adicionarSocio();
+    };
   }
 
   angular.module('registroLivreApp')
