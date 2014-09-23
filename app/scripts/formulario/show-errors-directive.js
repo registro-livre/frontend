@@ -8,7 +8,7 @@
       var inputNgEl = angular.element(inputEl);
       var inputName = inputNgEl.attr('name');
 
-      var shouldShowError = formCtrl[inputName].$invalid && formCtrl.submitted != undefined && formCtrl.submitted;
+      var shouldShowError = formCtrl[inputName].$invalid && formCtrl.submitted !== undefined && formCtrl.submitted;
 
       el.toggleClass('has-error', shouldShowError);
     });

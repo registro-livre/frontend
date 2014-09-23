@@ -1,6 +1,7 @@
 <div class="container-fluid">
-  <div class="alert alert-success" role="alert" ng-show="showSuccessMessage">
-    Obrigado por colaborar com o Registro Livre! Pronto para mais? ;-)
+  <a id="top" />
+  <div ng-repeat="alert in alerts" class="alert alert-{{alert.class}}" role="alert">
+    {{alert.message}}
   </div>
   <ng-form name="empresaForm">
     <div class="panel panel-default">
