@@ -2,7 +2,7 @@
   <div class="alert alert-success" role="alert" ng-show="showSuccessMessage">
     Obrigado por colaborar com o Registro Livre! Pronto para mais? ;-)
   </div>
-  <form role="form">
+  <ng-form>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Empresa</h3>
@@ -41,7 +41,7 @@
     </div>
   </form>
 
-  <form role="form" ng-submit="adicionarSocio()">
+  <ng-form>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Sócios / Titulares / Diretores</h3>
@@ -82,7 +82,7 @@
         <endereco info="model.novoSocio.endereco"></endereco>
         <div class="row">
           <div class="col-md-12">
-            <button type="submit" class="btn btn-primary">Adicionar Sócio</button>
+            <button class="btn btn-primary" ng-click="adicionarSocio()">Adicionar Sócio</button>
           </div>
         </div>
         <br>
@@ -112,7 +112,7 @@
     </div>
   </form>
 
-  <form role="form" ng-submit="registrar()">
+  <ng-form>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Adicionar Arquivo</h3>
@@ -128,7 +128,7 @@
 
     <div class="row center-block">
       <div class="col-md-12">
-        <button type="submit" class="btn btn-success btn-lg">Registrar</button>
+        <button class="btn btn-success btn-lg" ng-click="registrar()">Registrar</button>
       </div>
     </div>
   </form>
