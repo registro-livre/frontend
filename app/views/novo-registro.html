@@ -66,17 +66,18 @@
             <input name="cpf" type="text" class="form-control" ng-model="model.novoSocio.cpf" required />
           </div>
           <div class="form-group col-md-4" show-errors>
-            <label>Estado Atual</label>
+            <label>Estado Atual *</label>
             <div class="row">
               <div class="col-md-6">
                 <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Ativo" required />
                 Ativo
               </div>
               <div class="col-md-6">
-                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Desligado" />
+                <input type="radio" name="estadoAtual" ng-model="model.novoSocio.estadoAtual" value="Desligado" required />
                 Desligado
               </div>
             </div>
+            <span class="help-block" ng-show="showEstadoAtualError()">Selecione um estado atual!</span>
           </div>
         </div>
         <h3>Endereço</h3>

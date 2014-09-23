@@ -69,6 +69,10 @@
 
       $scope.socioForm.submitted = false;
     };
+
+    $scope.showEstadoAtualError = function() {
+      return $scope.socioForm.submitted !== undefined && $scope.socioForm.submitted && $scope.socioForm.estadoAtual.$invalid;
+    };
   }
 
   angular.module('registroLivreApp.registro')
