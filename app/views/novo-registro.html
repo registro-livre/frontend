@@ -2,16 +2,16 @@
   <div class="alert alert-success" role="alert" ng-show="showSuccessMessage">
     Obrigado por colaborar com o Registro Livre! Pronto para mais? ;-)
   </div>
-  <ng-form>
+  <ng-form name="empresaForm">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Empresa</h3>
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-6" show-errors >
             <label>CNPJ *</label>
-            <input id="cnpj" type="tel" class="form-control" ng-model="model.registro.cnpj" required autofocus />
+            <input id="cnpj" name="cnpj" type="tel" class="form-control" ng-model="model.registro.cnpj" required autofocus />
           </div>
           <div class="form-group col-md-6">
             <label>NIRE</label>
@@ -19,13 +19,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-md-8">
+          <div class="form-group col-md-8" show-errors>
             <label>Nome da empresa *</label>
-            <input class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
+            <input name="nomeEmpresa" class="form-control" ng-model="model.registro.nomeEmpresa" placeholder="Digite o nome completo de empresa" required />
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-4" show-errors>
             <label>Data de Constituição *</label>
-            <input type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
+            <input name="dataConstituicao" type="date" class="form-control" ng-model="model.registro.dataConstituicao" placeholder="dd/mm/aaaa" required />
           </div>
         </div>
       </div>
@@ -39,18 +39,18 @@
         <endereco info="model.registro.localizacao"></endereco>
       </div>
     </div>
-  </form>
+  </ng-form>
 
-  <ng-form>
+  <ng-form name="socioForm">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Sócios / Titulares / Diretores</h3>
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-12" show-errors>
             <label>Nome *</label>
-            <input type="text" class="form-control" ng-model="model.novoSocio.nome" required />
+            <input name="nome" type="text" class="form-control" ng-model="model.novoSocio.nome" required />
           </div>
         </div>
         <div class="row">
@@ -60,11 +60,11 @@
               <option value="Brasileiro">Brasileiro</option>
             </select>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-4" show-errors>
             <label>CPF *</label>
-            <input type="text" class="form-control" ng-model="model.novoSocio.cpf" required />
+            <input name="cpf" type="text" class="form-control" ng-model="model.novoSocio.cpf" required />
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-4" show-errors>
             <label>Estado Atual</label>
             <div class="row">
               <div class="col-md-6">
@@ -110,9 +110,9 @@
         </div>
       </div>
     </div>
-  </form>
+  </ng-form>
 
-  <ng-form>
+  <ng-form name="arquivoForm">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>Adicionar Arquivo</h3>
@@ -131,5 +131,5 @@
         <button class="btn btn-success btn-lg" ng-click="registrar()">Registrar</button>
       </div>
     </div>
-  </form>
+  </ng-form>
 </div>
