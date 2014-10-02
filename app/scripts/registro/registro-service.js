@@ -1,3 +1,4 @@
+
 (function () {
   'use strict';
 
@@ -36,8 +37,7 @@
       registro: registro,
       registrar: registrar,
       novoSocio: novoSocio,
-      adicionarSocio: adicionarSocio,
-      listaDeRegistros: listaDeRegistros
+      adicionarSocio: adicionarSocio
     };
   });
 
