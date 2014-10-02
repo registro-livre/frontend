@@ -10,6 +10,7 @@
     var listaDeRegistros = [];
 
     function registrar() {
+      this.registro.dataUltimaAtualizacao = new Date();
       /*jshint validthis:true */
       listaDeRegistros.push(angular.copy(this.registro));
       /*jshint validthis:true */

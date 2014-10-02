@@ -14,7 +14,7 @@
       <tr ng-repeat="registro in model.listaDeRegistros">
         <td>{{registro.cnpj}}</td>
         <td>{{registro.nomeEmpresa}}</td>
-        <td>{{registro.dataUltimaAtualizacao}}</td>
+        <td>{{registro.dataUltimaAtualizacao | date : format : timezone}}</td>
       </tr>
     </tbody>
   </table>
