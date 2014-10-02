@@ -1,3 +1,4 @@
+
 (function () {
   'use strict';
 
@@ -10,7 +11,6 @@
     var listaDeRegistros = [];
 
     function registrar() {
-      this.registro.dataUltimaAtualizacao = new Date();
       /*jshint validthis:true */
       listaDeRegistros.push(angular.copy(this.registro));
       /*jshint validthis:true */
@@ -37,8 +37,7 @@
       registro: registro,
       registrar: registrar,
       novoSocio: novoSocio,
-      adicionarSocio: adicionarSocio,
-      listaDeRegistros: listaDeRegistros
+      adicionarSocio: adicionarSocio
     };
   });
 
